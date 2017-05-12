@@ -16,7 +16,7 @@ RUN php -r "readfile('https://getcomposer.org/installer');" | php && \
     composer self-update
 
 
-RUN usermod -u 500 www-data && groupmod -g 500 www-data
+USER www-data
 
 
 RUN echo "export PATH=~/.composer/vendor/bin/:$PATH" && \ 
