@@ -2,7 +2,7 @@ FROM avnir/php-fpm:php5
 MAINTAINER Avni Rexhepi <arexhepi@gmail.com>
 
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -qy --allow-downgrades \
             git \
             php5.6-readline \
             --no-install-recommends && \
