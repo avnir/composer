@@ -1,11 +1,10 @@
-FROM avnir/php-fpm:php5
+FROM avnir/php-fpm:php7.0
 MAINTAINER Avni Rexhepi <arexhepi@gmail.com>
 
 
-RUN apt-get update && apt-get install -qy --allow-downgrades \
+RUN apt-get update && apt-get install -qy \
             git \
-            php5.6-readline \
-            --no-install-recommends && \
+            php7.0-readline && \
     apt-get -y autoremove && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

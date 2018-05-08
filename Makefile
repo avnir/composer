@@ -1,2 +1,2 @@
 build:
-	- docker build -t avnir/composer:php5 .
+	- docker build -t avnir/composer:php7.0 .
