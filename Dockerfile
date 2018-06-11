@@ -1,10 +1,10 @@
-FROM avnir/php-fpm:php7.0
+FROM avnir/php-fpm:php7.1
 MAINTAINER Avni Rexhepi <arexhepi@gmail.com>
 
 
 RUN apt-get update && apt-get install -qy \
             git \
-            php7.0-readline && \
+            php7.1-readline && \
     apt-get -y autoremove && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
