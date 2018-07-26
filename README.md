@@ -2,12 +2,6 @@
 
 This is a [Docker](http://www.docker.com) image for [Composer](https://getcomposer.org).
 
-
-## Versions
-- [latest](https://github.com/avnir/composer/tree/master) available as ```avnir/composer:latest``` at [Docker Hub](https://hub.docker.com/r/avnir/composer/)
-- [php5](https://github.com/avnir/composer/tree/php5) available as ```avnir/composer:php5``` at [Docker Hub](https://hub.docker.com/r/avnir/composer/)
-
-
 ## Usage examples
 - ```docker run --rm -v ${PWD}:/var/www:rw avnir/composer install```
 - ```docker run --rm -v ${PWD}:/var/www:rw avnir/composer update```
