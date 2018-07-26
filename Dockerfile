@@ -1,4 +1,4 @@
-FROM avnir/php-fpm:php7.1
+FROM avnir/php-fpm:php7.2
 MAINTAINER Avni Rexhepi <arexhepi@gmail.com>
 
 
