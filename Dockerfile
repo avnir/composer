@@ -2,9 +2,9 @@ FROM avnir/php-fpm:php7.1
 MAINTAINER Avni Rexhepi <arexhepi@gmail.com>
 
 
-RUN apt-get update && apt-get install -qy \
-            git \
-            php7.1-readline && \
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+            git && \
     apt-get -y autoremove && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
