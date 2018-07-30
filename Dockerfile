@@ -15,9 +15,6 @@ RUN php -r "readfile('http://getcomposer.org/installer');" | php && \
     composer self-update
 
 
-USER www-data
-
-
 RUN echo "export PATH=~/.composer/vendor/bin/:$PATH" && \ 
     echo "export COMPOSER_HOME=/var/www/"
 
@@ -26,6 +23,9 @@ RUN echo "export PATH=~/.composer/vendor/bin/:$PATH" && \
 RUN mkdir -p /var/www/ && \
     touch /var/www/placeholder && \
     chown -R www-data:www-data /var/www
+
+
+USER www-data
 
 
 ENTRYPOINT ["composer"]
