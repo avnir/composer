@@ -15,17 +15,16 @@ RUN php -r "readfile('http://getcomposer.org/installer');" | php && \
     composer self-update
 
 
+ADD start.sh /
+RUN chmod +x /start.sh
+
+
 RUN echo "export PATH=~/.composer/vendor/bin/:$PATH" && \ 
     echo "export COMPOSER_HOME=/var/www/"
 
 
-# We need to create an empty file, otherwise the volume will belong to root.
-RUN mkdir -p /var/www/ && \
-    touch /var/www/placeholder && \
-    chown -R www-data:www-data /var/www
+#USER www-data
 
 
-USER www-data
-
-
-ENTRYPOINT ["composer"]
+ENTRYPOINT ["/start.sh","composer"]
+CMD ["--help"]
