@@ -1,5 +1,5 @@
-FROM avnir/php-fpm:php7.2
-MAINTAINER Avni Rexhepi <arexhepi@gmail.com>
+FROM avnir/php-fpm:php7.3
+LABEL maintainer="Avni Rexhepi <arexhepi@gmail.com>"
 
 
 RUN apt-get update && \
@@ -15,16 +15,13 @@ RUN php -r "readfile('http://getcomposer.org/installer');" | php && \
     composer self-update
 
 
-ADD start.sh /
-RUN chmod +x /start.sh
+COPY start-container /usr/local/bin/start-container
+RUN chmod +x /usr/local/bin/start-container
 
 
 RUN echo "export PATH=~/.composer/vendor/bin/:$PATH" && \ 
     echo "export COMPOSER_HOME=/var/www/"
 
 
-#USER www-data
-
-
-ENTRYPOINT ["/start.sh","composer"]
+ENTRYPOINT ["start-container","composer"]
 CMD ["--help"]

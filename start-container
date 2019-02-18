@@ -1,5 +1,5 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+
 
 PUID=${PUID:-500}
 PGID=${PGID:-500}
